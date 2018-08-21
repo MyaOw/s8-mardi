@@ -1,24 +1,15 @@
-# README
+# THPbab
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Le site du meilleur restaurant de kebabs de Lyon !<br/>
+Enfin, il paraît.<br/> 
+Je suis végétarienne, j'ai pas goûté.<br/>
 
-Things you may want to cover:
+## Pour tester (l'app, pas le restau)
 
-* Ruby version
+`git clone https://github.com/MyaOw/s8-mardi.git`
+`cd s8-mardi`
+`rails s`
 
-* System dependencies
+## Et en prod, c'est ici
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<https://restaurant-pauline.herokuapp.com/>
