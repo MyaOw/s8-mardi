@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+/* --- Import Google Fonts stylesheets --- */
+@import url("https://use.typekit.net/aqe4lkg.css");
+
+/* --- Fonts --- */
+body {
+  font-family: "freight-sans-pro";
+  color: rgb(255, 255, 255);
+  background-color: black;
+  font-size: 18px;
+}
