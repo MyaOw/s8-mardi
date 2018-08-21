@@ -1,3 +1,5 @@
+"use strict";
+
 jQuery(document).ready(function ($) {
 
 // définit l'intervalle entre les changements d'image
