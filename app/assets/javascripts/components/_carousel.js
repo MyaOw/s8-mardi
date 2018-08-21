@@ -1,18 +1,18 @@
 jQuery(document).ready(function ($) {
 
 // définit l'intervalle entre les changements d'image
-  let interval;
-  interval = setInterval(function () {
+  let intervalle;
+  intervalle = setInterval(function () {
     moveRight();
   }, 3000);
 
 // arrête les changements au survol de l'image
   $('.slider').mouseover(function(){
-    clearInterval(interval);
+    clearInterval(intervalle);
   });
   
   $('.slider').mouseleave(function(){
-    interval = setInterval(function () {
+    intervalle = setInterval(function () {
       moveRight();
       }, 3000);
   });
