@@ -28,10 +28,9 @@ jQuery(document).ready(function ($) {
   
 // définit la taille de _slider
 	$('.slider').css({ width: slideWidth, height: slideHeight });
-// 
 	$('.slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
 	
-    $('.slider ul li:last-child').prependTo('.slider ul');
+  $('.slider ul li:last-child').prependTo('.slider ul');
 
 // définit les animations au changement d'image
     function moveLeft() {
@@ -64,14 +63,17 @@ jQuery(document).ready(function ($) {
     });
 
     // définit les paramètres pour les dots
-    let dot;
+    let slide1 = $('.slider ul li').eq(0);
+    let slide2 = $('.slider ul li').eq(1);
+    let slide3 = $('.slider ul li').eq(2);
+    
     $('.dot1').click(function() {
-      $('body').find('span').eq(0).replaceWith('<i class="fas fa-circle"></i>');
+      $(slide1).prependTo('.slider ul');
     });
     $('.dot2').click(function() {
-      $('body').find('span').eq(0).replaceWith('<i class="fas fa-circle"></i>');
+      $(slide2).prependTo('.slider ul');
     });
     $('.dot3').click(function() {
-      $('body').find('span').eq(0).replaceWith('<i class="fas fa-circle"></i>');
+      $(slide3).prependTo('.slider ul');
     });
 });    
