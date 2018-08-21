@@ -1,6 +1,6 @@
 "use strict";
 
-jQuery(document).ready(function ($) {
+jQuery(window).on('load', function () {
 
 // définit l'intervalle entre les changements d'image
   let intervalle;
@@ -39,7 +39,6 @@ jQuery(document).ready(function ($) {
         }, 500, function () {
             $('.slider ul li:last-child').prependTo('.slider ul');
             $('.slider ul').css('left', '');
-            
         });
     };
 
@@ -72,12 +71,18 @@ jQuery(document).ready(function ($) {
 
     $('.dot1').click(function() {
       $(slide1).prependTo('.slider ul');
-      $($('.slider ul li').eq(0)).addClass('active-dot');
+      $($('i')).removeClass('active-dot');
+      $($('i').eq(0)).addClass('active-dot');
+      
     });
     $('.dot2').click(function() {
       $(slide2).prependTo('.slider ul');
+      $($('i')).removeClass('active-dot');
+      $($('i').eq(1)).addClass('active-dot');
     });
     $('.dot3').click(function() {
       $(slide3).prependTo('.slider ul');
+      $($('i')).removeClass('active-dot');
+      $($('i').eq(2)).addClass('active-dot');
     });
 });    
