@@ -72,3 +72,5 @@ gem 'jquery-rails'
 
 #fontawesome
 gem "font-awesome-rails"
+
+gem 'rails_12factor', group: :production  
