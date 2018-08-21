@@ -7,7 +7,7 @@ Je suis végétarienne, j'ai pas goûté.<br/>
 ## Pour tester (l'app, pas le restau)
 
 `git clone https://github.com/MyaOw/s8-mardi.git`<br/>
-`cd s8-mardi`<br/>
+`bundle install`<br/>
 `rails s`
 
 ## Et en prod, c'est ici
