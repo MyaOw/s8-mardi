@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 /* --- Import Google Fonts stylesheets --- */
 @import url("https://use.typekit.net/aqe4lkg.css");

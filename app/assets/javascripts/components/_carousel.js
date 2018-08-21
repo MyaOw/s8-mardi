@@ -1,57 +1,75 @@
 jQuery(document).ready(function ($) {
 
-  var interval;
+// définit l'intervalle entre les changements d'image
+  let interval;
   interval = setInterval(function () {
     moveRight();
   }, 3000);
 
-  $('._slider').mouseover(function(){
+// arrête les changements au survol de l'image
+  $('.slider').mouseover(function(){
     clearInterval(interval);
   });
   
-  $('._slider').mouseleave(function(){
+  $('.slider').mouseleave(function(){
     interval = setInterval(function () {
       moveRight();
       }, 3000);
   });
   
-	var slideCount = $('._slider ul li').length;
-	var slideWidth = $('._slider ul li').width();
-	var slideHeight = $('._slider ul li').height();
-	var sliderUlWidth = slideCount * slideWidth;
+// définit le nombre de slides et la largeur/hauteur de celles ci
+// définit ensuite sliderUlWidth qui est la longueur totale des slides bout à bout
+	let slideCount = $('.slider ul li').length;
+	let slideWidth = $('.slider ul li').width();
+	let slideHeight = $('.slider ul li').height();
+	let sliderUlWidth = slideCount * slideWidth;
+  
+// définit la taille de _slider
+	$('.slider').css({ width: slideWidth, height: slideHeight });
+// 
+	$('.slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
 	
-	$('._slider').css({ width: slideWidth, height: slideHeight });
-	
-	$('._slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-	
-    $('._slider ul li:last-child').prependTo('._slider ul');
+    $('.slider ul li:last-child').prependTo('.slider ul');
 
+// définit les animations au changement d'image
     function moveLeft() {
-        $('._slider ul').animate({
+        $('.slider ul').animate({
             left: + slideWidth
         }, 500, function () {
-            $('._slider ul li:last-child').prependTo('._slider ul');
-            $('._slider ul').css('left', '');
+            $('.slider ul li:last-child').prependTo('.slider ul');
+            $('.slider ul').css('left', '');
         });
     };
 
     function moveRight() {
-        $('._slider ul').animate({
+        $('.slider ul').animate({
             left: - slideWidth
         }, 500, function () {
-            $('._slider ul li:first-child').appendTo('._slider ul');
-            $('._slider ul').css('left', '');
+            $('.slider ul li:first-child').appendTo('.slider ul');
+            $('.slider ul').css('left', '');
         });
     };
 
-    $('._slider_prev').click(function () {
+// applique les fonctions move aux boutons
+    $('.slider_prev').click(function () {
         moveLeft();
         return false;
     });
 
-    $('._slider_next').click(function () {
+    $('.slider_next').click(function () {
         moveRight();
         return false;
     });
 
+    // définit les paramètres pour les dots
+    let dot;
+    $('.dot1').click(function() {
+      $('body').find('span').eq(0).replaceWith('<i class="fas fa-circle"></i>');
+    });
+    $('.dot2').click(function() {
+      $('body').find('span').eq(0).replaceWith('<i class="fas fa-circle"></i>');
+    });
+    $('.dot3').click(function() {
+      $('body').find('span').eq(0).replaceWith('<i class="fas fa-circle"></i>');
+    });
 });    

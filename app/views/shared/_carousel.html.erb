@@ -3,12 +3,23 @@
         <li><%= image_tag 'image2.jpg' %></li>
         <li><%= image_tag 'image3.jpg' %></li> -->
 
-<div class="_slider">
-    <a href="#" class="_slider_next">&#10095;</a>
-    <a href="#" class="_slider_prev">&#10094;</a>
+<div class="slider">
+    <a href="#" class="slider_next">&#10095;</a>
+    <a href="#" class="slider_prev">&#10094;</a>
     <ul>
         <li><%= image_tag 'image1.jpg' %></li>
         <li><%= image_tag 'image2.jpg' %></li>
         <li><%= image_tag 'image3.jpg' %></li>
-    </ul>  
+    </ul>
+
+    <div>  
+      <p class="carousel-content">THPbab</p>
+      <p class="carousel-sub">La référence lyonnaise.</p>
+    </div>
 </div>
+
+    <div class="dots">
+      <span class="dot1"><%= fa_icon "circle-thin" %> </span>
+      <span class="dot2"><%= fa_icon "circle-thin" %> </span>
+      <span class="dot3"><%= fa_icon "circle-thin" %></span>
+    </div>
