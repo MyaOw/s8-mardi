@@ -39,6 +39,7 @@ jQuery(document).ready(function ($) {
         }, 500, function () {
             $('.slider ul li:last-child').prependTo('.slider ul');
             $('.slider ul').css('left', '');
+            
         });
     };
 
@@ -48,6 +49,7 @@ jQuery(document).ready(function ($) {
         }, 500, function () {
             $('.slider ul li:first-child').appendTo('.slider ul');
             $('.slider ul').css('left', '');
+            $('.slider ul li:last-child').addClass('active-dot')
         });
     };
 
@@ -63,12 +65,14 @@ jQuery(document).ready(function ($) {
     });
 
     // définit les paramètres pour les dots
+
     let slide1 = $('.slider ul li').eq(0);
     let slide2 = $('.slider ul li').eq(1);
     let slide3 = $('.slider ul li').eq(2);
-    
+
     $('.dot1').click(function() {
       $(slide1).prependTo('.slider ul');
+      $($('.slider ul li').eq(0)).addClass('active-dot');
     });
     $('.dot2').click(function() {
       $(slide2).prependTo('.slider ul');
