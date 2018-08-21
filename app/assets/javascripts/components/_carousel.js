@@ -6,6 +6,7 @@ jQuery(window).on('load', function () {
   let intervalle;
   intervalle = setInterval(function () {
     moveRight();
+
   }, 3000);
 
 // arrête les changements au survol de l'image
@@ -24,7 +25,8 @@ jQuery(window).on('load', function () {
 	let slideCount = $('.slider ul li').length;
 	let slideWidth = $('.slider ul li').width();
 	let slideHeight = $('.slider ul li').height();
-	let sliderUlWidth = slideCount * slideWidth;
+  let sliderUlWidth = slideCount * slideWidth;
+  let i = 0;
   
 // définit la taille de _slider
 	$('.slider').css({ width: slideWidth, height: slideHeight });
@@ -39,6 +41,9 @@ jQuery(window).on('load', function () {
         }, 500, function () {
             $('.slider ul li:last-child').prependTo('.slider ul');
             $('.slider ul').css('left', '');
+            i--;
+            $($('i')).removeClass('active-dot');
+            $($('i').eq(i%slideCount)).addClass('active-dot');
         });
     };
 
@@ -48,7 +53,10 @@ jQuery(window).on('load', function () {
         }, 500, function () {
             $('.slider ul li:first-child').appendTo('.slider ul');
             $('.slider ul').css('left', '');
-            $('.slider ul li:last-child').addClass('active-dot')
+            i++;
+            $($('i')).removeClass('active-dot');
+            $($('i').eq(i%slideCount)).addClass('active-dot');
+
         });
     };
 
@@ -73,16 +81,19 @@ jQuery(window).on('load', function () {
       $(slide1).prependTo('.slider ul');
       $($('i')).removeClass('active-dot');
       $($('i').eq(0)).addClass('active-dot');
+      i = 0;
       
     });
     $('.dot2').click(function() {
       $(slide2).prependTo('.slider ul');
       $($('i')).removeClass('active-dot');
       $($('i').eq(1)).addClass('active-dot');
+      i = 1;
     });
     $('.dot3').click(function() {
       $(slide3).prependTo('.slider ul');
       $($('i')).removeClass('active-dot');
       $($('i').eq(2)).addClass('active-dot');
+      i = 2;
     });
 });    
